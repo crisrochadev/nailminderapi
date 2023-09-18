@@ -1,0 +1,16 @@
+{
+    "web": {
+        "client_id": "608670435451-d5ug4h6boa04j6iniieinu3rj5u7a4c2.apps.googleusercontent.com",
+        "project_id": "nailminder",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_secret": "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",
+        "redirect_uris": [
+            "http://localhost:9000/auth/login-google"
+        ],
+        "javascript_origins": [
+            "http://localhost:9000"
+        ]
+    }
+}
