@@ -32,7 +32,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'address_complement',
         'address_city',
         'address_state',
-        'slug'
+        'slug',
+        'user_page'
     ];
 
     /**
@@ -64,6 +65,6 @@ class User extends Authenticatable implements MustVerifyEmail
     }
     public function page()
     {
-        return $this->hasMany(UserPage::class, 'user_id', 'id');
+        return $this->hasMany(UserPage::class, 'user_page', 'id');
     }
 }

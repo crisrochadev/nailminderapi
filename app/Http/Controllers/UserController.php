@@ -53,4 +53,20 @@ class UserController extends Controller
 
         return ResponseApi::ok([], "Senha alterada com sucesso!");
     }
+    public function getUserBySlug($slug)
+    {
+        try {
+
+            $user = User::where('slug',$slug)->first();
+
+            if (!$user) {
+                return ResponseApi::error([], 'Página não encontrada.');
+            }
+            return ResponseApi::ok([
+                'id' => $user->id
+            ]);
+        } catch (\Exception $e) {
+            return ResponseApi::error([], $e->getMessage());
+        }
+    }
 }

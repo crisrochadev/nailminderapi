@@ -11,10 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_layout_page', function (Blueprint $table) {
+        Schema::create('user_layout_pages', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('name');
+            $table->string('thumbnail');
+            $table->string('url');
+            
+            
         });
     }
 

@@ -24,7 +24,7 @@ class SendCodeResetPassword extends Mailable
     {
         $this->code = $data['code'];
         $this->type = $data['type'];
-        $this->url = env('FRONT_URL')."/auth/confirmar-email?token=".$data['code'];
+        $this->url = env('FRONT_URL')."/restore?token=".$data['code'];
     }
 
     /**

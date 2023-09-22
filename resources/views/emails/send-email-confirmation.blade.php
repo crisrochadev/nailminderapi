@@ -200,7 +200,7 @@
                         style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;">
                         <p style="margin: 0;">Se isso não funcionar, copie e cole o seguinte link em seu navegador:
                         </p>
-                        <p style="margin: 0;"><a href="https://sendgrid.com"
+                        <p style="margin: 0;"><a href="{{$url}}"
                                 target="_blank">{{ $url }}</a></p>
                     </td>
                 </tr>

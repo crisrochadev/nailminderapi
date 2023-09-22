@@ -4,12 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use App\Models\UserLayoutPage;
 
-class UserPage extends Model
+
+class DashItems extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -19,11 +20,10 @@ class UserPage extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'id', 'title', 'description', 'user_id', 'active', 'layout_id'
+        'id', 'parent_id', 'classe', 'style', 'content','element','layout_id'
     ];
-    public function layout(): HasOne
+    public function children(): HasMany
     {
-        return $this->hasOne(UserLayoutPage::class, 'id', 'layout_id');
+        return $this->hasMany(DashItems::class, 'parent_id', 'id');
     }
-    
 }
